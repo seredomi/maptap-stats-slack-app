@@ -7,11 +7,21 @@ import GreetingWorkflow from "./workflows/greeting_workflow.ts";
  * https://api.slack.com/automation/manifest
  */
 export default Manifest({
-  name: "deno-hello-world",
-  description:
-    "A sample that demonstrates using a function, workflow and trigger to send a greeting",
-  icon: "assets/default_new_app_icon.png",
+  name: "maptap stats",
+  description: "generate MapTap statistics",
+  icon: "assets/maptap-icon.png",
   workflows: [GreetingWorkflow],
   outgoingDomains: [],
-  botScopes: ["commands", "chat:write", "chat:write.public"],
+  botScopes: ["commands", "chat:write", "channels:history"],
+  longDescription: `generate MapTap statistics!
+
+    run \`/maptap-stats\` in the #maptap channel to see each tapper's lowest, average, and highest scores
+
+    optional "flags" - these should work in any order after the \`/maptap-stats\` command
+
+    - tag specific users to only see only their stats. otherwise it will report on every user who has played
+
+    - optionally specify a date range in the format \`MM/DD/YY:MM/DD/YY\`
+
+    - add the flag \`-v\` to see more in-depth stats on all 5 maptap rounds`,
 });
