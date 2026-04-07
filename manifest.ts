@@ -13,6 +13,8 @@ export default Manifest({
   workflows: [GreetingWorkflow],
   outgoingDomains: [],
   botScopes: ["commands", "chat:write", "channels:history"],
+  backgroundColor: "#254d31",
+  displayName: "MapTap Stats",
   longDescription: `generate MapTap statistics!
 
     run \`/maptap-stats\` in the #maptap channel to see each tapper's lowest, average, and highest scores
@@ -24,4 +26,5 @@ export default Manifest({
     - optionally specify a date range in the format \`MM/DD/YY:MM/DD/YY\`
 
     - add the flag \`-v\` to see more in-depth stats on all 5 maptap rounds`,
+  features: {},
 });
